@@ -93,5 +93,5 @@ target_link_libraries("HMIMessageHandler" ${LIBRARIES})
 # Readme.txt in test directory of hmi_message_handler 
 
 if(BUILD_TESTS)
-  add_subdirectory(test)
+  #add_subdirectory(test)
 endif()

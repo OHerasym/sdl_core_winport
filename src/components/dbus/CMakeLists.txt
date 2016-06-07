@@ -83,5 +83,5 @@ ADD_DEPENDENCIES("DBus" Utils install-3rd_party_dbus)
 target_link_libraries("DBus" "${LIBRARIES}")
 
 if(BUILD_TESTS)
-  add_subdirectory(test)
+ # add_subdirectory(test)
 endif()

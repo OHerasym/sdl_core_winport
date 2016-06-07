@@ -56,10 +56,10 @@ def gen_cert(out_cert_file, key_file, ca_cert_file, ca_key_file, days, answer):
         "-CAcreateserial -out", out_cert_file, "-days", days)
 
 def convertPath(path):
-      sep = os.path.sep
-      if sep != '/':
-          path = path.replace(os.path.sep, '/')
-      return path
+    sep = os.path.sep
+    if sep != '/':
+        path = path.replace(os.path.sep, '/')
+    return path
 
 def gen_expire_cert(out_cert_file, key_file, ca_cert_file, ca_key_file, days, answer):
     """Expired certificate generator
@@ -94,7 +94,7 @@ def gen_expire_cert(out_cert_file, key_file, ca_cert_file, ca_key_file, days, an
         default_ca = ca_default
 
         [ ca_default ]
-        dir = %s""" % (convertPath(temp_dir), ) + """ 
+        dir = %s""" % (convertPath(temp_dir), ) + """
         certs = %s""" % (convertPath(current_dir), ) + """
         new_certs_dir =  %s""" % (convertPath(current_dir), ) + """
         database = %s""" % (convertPath(database_file_path), ) + """
@@ -175,7 +175,7 @@ def main():
             print "Root key file '%s' exists. Generation skipped according to soft mode." % (soft_verify_file, )
             return
 
-    server_root_answer = answers("server_root", "", "US", "California", "SiliconValley", "CAcert.org", "CAcert", "sample@cacert.org")
+    server_root_answer = answers("server_root", "", "US", "California", "Silicon Valley", "CAcert.org", "CAcert", "sample@cacert.org")
     client_root_answer = answers("client_root", "", "US", "California", "Silicon Valley", "CAcert.org", "CAcert", "sample@cacert.org")
     ford_server_answer = answers("FORD", "", "US", "Michigan", "Detroit", "FORD_SERVER", "FORD_SDL_SERVER" ,"sample@ford.com")
     ford_client_answer = answers("FORD_CLIENT", "", "US", "Michigan", "Detroit", "FORD_CLIENT", "FORD_SDL_CLIENT" ,"sample@ford.com")
